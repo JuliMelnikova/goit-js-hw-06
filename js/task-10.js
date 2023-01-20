@@ -3,10 +3,38 @@ function getRandomHexColor() {
 }
 
 
+const createColection = document.querySelector('[data-create]');
+const destroyColection = document.querySelector('[data-destroy]');
+const boxesColection = document.querySelector('#boxes');
+
+createColection.addEventListener('click', createBoxes);
+
+function createBoxes(amount) {
+  var boxSize = 30;
+  const inputValue = document.querySelector('#controls>input').value;
+  for (var index = 0; index < Number(inputValue); index++) {
+    var newSize = boxSize + (index * 10);
+    const inputEl = document.createElement('input');
+    inputEl.style.width = `${newSize}px`;
+    inputEl.style.backgroundColor = getRandomHexColor();
+    boxesColection.appendChild(inputEl);
+  }
+}
+
+
+function destroyBoxes() {
+  const destroyEl = document.querySelectorAll('#boxes>input');
+  destroyEl.forEach(el => {
+    el.remove();
+  })
+}
+
+destroyColection.addEventListener('click', destroyBoxes);
+
+
 // Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів 
 // в input і натискає кнопку Створити, після чого рендериться колекція. Натисненням на кнопку 
 // Очистити, колекція елементів очищається.
-
 
 // Створи функцію createBoxes(amount), яка приймає один параметр - число. Функція створює стільки 
 // <div>, скільки вказано в amount і додає їх у div#boxes.

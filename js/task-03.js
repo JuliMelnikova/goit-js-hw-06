@@ -15,6 +15,13 @@ const images = [
 
 const list = document.querySelector('.gallery');
 
+  list.style.display = "flex";
+  list.style.flexBasis = "auto";
+  list.style.gap = 10;
+  list.style.flexDirection = "row";
+  list.style.listStyle = "none";
+
+
 const gallery = images.map(img => {
   return (
     `<li class="list-item">
