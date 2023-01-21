@@ -11,15 +11,22 @@ const ingredients = [
 
 const listWrapper = document.querySelector("#ingredients");
 
-ingredients.forEach(ingredient => {
+const engridientsList = ingredients.map(ingredient => {
   const currentItem = document.createElement('li');
   currentItem.textContent = ingredient;
   currentItem.classList.add('item');
-  listWrapper.append(currentItem);
+  return currentItem;
 });
-// console.log(listWrapper);
+listWrapper.append(...engridientsList);
 
 
+//Варіант 2
+// ingredients.forEach(ingredient => {
+//   const currentItem = document.createElement('li');
+//   currentItem.textContent = ingredient;
+//   currentItem.classList.add('item');
+//   listWrapper.append(currentItem);
+// });
 
 
 

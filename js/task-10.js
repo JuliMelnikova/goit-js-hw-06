@@ -23,10 +23,11 @@ function createBoxes(amount) {
 
 
 function destroyBoxes() {
-  const destroyEl = document.querySelectorAll('#boxes>input');
-  destroyEl.forEach(el => {
-    el.remove();
-  })
+  // const destroyEl = document.querySelectorAll('#boxes>input');
+  boxes.innerHTML = '';
+  // destroyEl.forEach(el => {
+  //   el.remove();
+  // })
 }
 
 destroyColection.addEventListener('click', destroyBoxes);
